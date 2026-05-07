@@ -5,6 +5,8 @@ cd /D "%~dp0"
 for %%a in (%*) do set "%%~a=1"
 if not "%release%"=="1" set debug=1
 
+set tailwind=bin\tailwindcss-windows-x64.exe
+
 set common_flags=
 set debug_flags=
 set release_flags=
