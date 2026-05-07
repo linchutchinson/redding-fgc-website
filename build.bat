@@ -16,4 +16,5 @@ if "%release%"=="1" set flags=%common_flags% %release_flags%
 
 if not exist out mkdir out
 
+%tailwind% -i input.css -o static\styles.css
 go build -o out/redding-fgc-website.exe %flags% || exit /b 1
