@@ -1,0 +1,13 @@
+// raddbg 0.9.24 project file
+
+target:
+{
+  executable: "out/redding-fgc-website.exe"
+  working_directory: "out/"
+  enabled: 1
+}
+debug_info:
+{
+  path: "C:/Users/Lincoln/Documents/GitHub/redding-fgc-website/out/redding-fgc-website.exe"
+  timestamp: 66214072577480
+}
