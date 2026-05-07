@@ -1,79 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Redding FGC • Home of Norcal Knockout</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/htmx.org@1.9.12"></script>
-<script>
-tailwind.config = { theme: { extend: { colors: { 'fgc-red': '#ef4444' } } } }
-</script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Redding FGC</title>
+	<link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-zinc-950 text-zinc-200 font-sans">
-<nav class="border-b border-zinc-800">
-<div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 bg-fgc-red rounded"></div>
-<span class="font-bold text-xl">Redding FGC</span>
-</div>
-<div class="flex gap-6 text-sm">
-<a href="#about" class="hover:text-fgc-red">About</a>
-<a href="#principles" class="hover:text-fgc-red">Principles</a>
-<a href="#contact" class="hover:text-fgc-red">Contact</a>
-</div>
-</div>
-</nav>
-
-<header class="max-w-5xl mx-auto px-6 pt-20 pb-16 text-center">
-<h1 class="text-6xl font-bold tracking-tighter">Redding FGC</h1>
-<p class="mt-4 text-2xl text-zinc-400">Home of Norcal Knockout</p>
-<div class="mt-8 flex justify-center gap-4">
-<a href="#contact" class="px-8 py-3 bg-fgc-red text-white rounded font-medium hover:bg-red-600">Join the Community</a>
-</div>
-</header>
-
-<section id="about" class="max-w-5xl mx-auto px-6 py-16 border-t border-zinc-800">
-<div class="max-w-2xl">
-<h2 class="text-4xl font-semibold tracking-tight">About Us</h2>
-<p class="mt-6 text-lg text-zinc-400">We are a community-based event organizing team dedicated to competitive fighting games and the people that love them.</p>
-</div>
-</section>
-
-<section id="principles" class="max-w-5xl mx-auto px-6 py-16 border-t border-zinc-800">
-<h2 class="text-4xl font-semibold tracking-tight">Principles</h2>
-<p class="mt-4 max-w-2xl text-zinc-400">These are the guiding principles of our organization. The criteria by which we decide which course of action to pursue and which projects to prioritize.</p>
-
-<div class="mt-10 grid gap-8 md:grid-cols-3">
-<div class="bg-zinc-900 p-8 rounded-2xl">
-<div class="text-fgc-red text-sm font-mono">01</div>
-<h3 class="mt-4 text-2xl font-semibold">Enjoy Fighting Games</h3>
-<p class="mt-4 text-zinc-400">At its core, we come together to celebrate and enjoy fighting games. To that end, we seek to make a space where fighting game players can find new friends and rivals. Whether it be playing the games, spectating, making art, doing cosplay, or anything else, the Redding FGC is a place where people from all walks of life can come together to deepen their love of fighting games.</p>
-</div>
-<div class="bg-zinc-900 p-8 rounded-2xl">
-<div class="text-fgc-red text-sm font-mono">02</div>
-<h3 class="mt-4 text-2xl font-semibold">Raise the Level of Play in Redding</h3>
-<p class="mt-4 text-zinc-400">Whether you're aiming to become a pro, or you'd just like to win a little more against your friends, the Redding FGC is dedicated to providing the environment and resources necessary for everyone to improve their skills and grow as players.</p>
-</div>
-<div class="bg-zinc-900 p-8 rounded-2xl">
-<div class="text-fgc-red text-sm font-mono">03</div>
-<h3 class="mt-4 text-2xl font-semibold">Nurture the Talents of the Community</h3>
-<p class="mt-4 text-zinc-400">In the course of their work as volunteers, members of our community have built valuable skills in fields such as audio engineering, business management, public speaking, and more. As a community, we want to build an environment where people can grow professionally and open up new opportunities for themselves, even when they leave the world of fighting games.</p>
-</div>
-</div>
-</section>
-
-<section id="contact" class="max-w-5xl mx-auto px-6 py-16 border-t border-zinc-800 text-center">
-<h2 class="text-4xl font-semibold tracking-tight">Get Involved</h2>
-<p class="mt-4 max-w-md mx-auto text-zinc-400">If you would like to get involved in our community, whether that's as a visitor and participant in our events, or as a volunteer, you can connect with us through Discord and Email.</p>
-<div class="mt-8 flex justify-center gap-4">
-<a href="https://discord.gg/MDBDDNysc2" class="px-8 py-3 border border-zinc-700 hover:bg-zinc-900 rounded font-medium">Join Discord</a>
-<a href="mailto:contact@reddingfgc.org" class="px-8 py-3 bg-white text-zinc-950 rounded font-medium hover:bg-zinc-200">Email Us</a>
-</div>
-</section>
-
-<footer class="border-t border-zinc-800 py-12 text-center text-sm text-zinc-500">
-© Redding FGC. Home of Norcal Knockout.
-</footer>
+	<nav class="border-b border-zinc-800 bg-zinc-950/80 backdrop-blur flex items-center justify-between px-6 py-4 sticky top-0">
+		<h1 class="text-sky-500 font-bold text-xl">Redding FGC</h1>
+		<div class="flex gap-6 text-sm">
+			<a href="#about" class="hover:text-sky-500">About</a>
+			<a href="#principles" class="hover:text-sky-500">Principles</a>
+			<a href="#contact" class="hover:text-sky-500">Contact</a>
+		</div>
+	</nav>
+	<header class="max-w-5xl mx-auto px-6 pt-24 pb-20 text-center">
+		<h1 class="text-7xl text-sky-500 font-bold tracking-tighter">Redding FGC</h1>
+		<p class="mt-3 text-3xl text-zinc-400">Fighting Games. Community. Growth.</p>
+	</header>
+	<section id="about" class="max-w-5xl mx-auto px-6 py-20 border-t border-zinc-800">
+		<h2 class="text-4xl text-semibold text-sky-500">About Us</h2>
+		<p class="mt-6 text-lg text-zinc-400">We are a community-based event organizing team dedicated to competitive fighting games and the people that love them.</p>
+	</section>
+	<section id="principles" class="max-w-5xl mx-auto px-6 py-20 border-t border-zinc-800">
+		<h2 class="text-4xl text-semibold text-sky-500">Principles</h2>
+		<p class="mt-6 text-lg text-zinc-400">These are the guiding principles of our organization. The criteria by which we decide which course of action to pursue and which projects to prioritize.</p>
+		<div class="mt-12 grid gap-8 md:grid-cols-3">
+			<div class="bg-zinc-900 p-8 rounded-3xl">
+				<p class="text-sky-500 text-sm font-mono">01</p>
+				<h3 class="mt-4 text-2xl font-semibold">Enjoy Fighting Games</h3>
+				<p class="mt-4 text-zinc-400">
+					At its core, we come together to celebrate and enjoy fighting games. To that end, we seek to make a
+					space where fighting game players can find new friends and rivals. Whether it be playing the games,
+					spectating, making art, doing cosplay, or anything else, the Redding FGC is a place where people from
+					all walks of life can come together to deepen their love of fighting games.
+				</p>
+			</div>
+			<div class="bg-zinc-900 p-8 rounded-3xl">
+				<p class="text-sky-500 text-sm font-mono">02</p>
+				<h3 class="mt-4 text-2xl font-semibold">Raise the Level of Play in Redding</h3>
+				<p class="mt-4 text-zinc-400">
+					Whether you're aiming to become a pro, or you'd just like to win a little more against your friends, the
+					Redding FGC is dedicated to providing the environment and resources necessary for everyone to
+					improve their skills and grow as players.
+				</p>
+			</div>
+			<div class="bg-zinc-900 p-8 rounded-3xl">
+				<p class="text-sky-500 text-sm font-mono">03</p>
+				<h3 class="mt-4 text-2xl font-semibold">Nurture the Talents of the Community</h3>
+				<p class="mt-4 text-zinc-400">
+					In the course of their work as volunteers, members of our community have built valuable skills in fields
+					such as audio engineering, business management, public speaking, and more. As a community, we
+					want to build an environment where people can grow professionally and open up new opportunities for
+					themselves, even when they leave the world of fighting games.
+				</p>
+			</div>
+		</div>
+	</section>
+	<section id="contact" class="max-w-5xl mx-auto px-6 py-20 border-t border-zinc-800">
+		<h2 class="text-4xl text-semibold text-sky-500">Contact</h2>
+		<p class="mt-6 text-lg text-zinc-400">
+			If you would like to get involved in our community, whether that's as a visitor and participant in our events,
+			or as a volunteer, you can connect with us through Discord and Email.
+		</p>
+		<div class="mt-8 flex justify-center gap-8">
+			<a href="https://discord.gg/MDBDDNysc2" class="px-8 py-3 border border-zinc-700 hover:bg-zinc-900 rounded font-medium">Join the Discord</a>
+			<a href="mailto:reddingfgc@gmail.com" class="px-8 py-3 border border-zinc-700 hover:bg-zinc-900 rounded font-medium">Email Us</a>
+		</div>
+	</section>
 </body>
 </html>
