@@ -4,5 +4,20 @@
 		{
 			"path": "."
 		}
-	]
+	],
+	"build_systems":
+	[
+		{
+			"name": "build.bat",
+			"cmd": "build.bat release",
+			"working_dir": "$project_path",
+			"file_regex": "^(.*)\\((\\d+):(\\d+)\\) (.*)$",
+			"variants": [
+				{
+					"name": "Debug Client",
+					"cmd": "build.bat debug client",
+				}
+			]
+		}
+	],
 }
