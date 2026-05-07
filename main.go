@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io/fs"
 	"net/http"
 	"embed"
 )
@@ -10,9 +11,10 @@ import (
 var static embed.FS
 
 func main() {
-	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.FS(static))))
+	static_fs, _ := fs.Sub(static, "static")
+	static_fs_handler := http.FileServer(http.FS(static_fs))
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, "static/index.html")
+		static_fs_handler.ServeHTTP(w, r)
 	})
 
 	fmt.Println("Hello RFGC")
