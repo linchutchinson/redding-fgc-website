@@ -16,20 +16,44 @@ func main() {
 		static_fs_handler.ServeHTTP(w, r)
 	})
 	http.HandleFunc("/bracket", bracketHandler)
+	http.HandleFunc("/event", eventHandler)
 
 	fmt.Println("Hello RFGC")
 	http.ListenAndServe(":8080", nil)
 }
 
 func bracketHandler(w http.ResponseWriter, r *http.Request) {
+	bracket := r.URL.Query().Get("bracket")
+	if bracket == "" {
+		http.Error(w, "bracket required", 400)
+		return
+	}
+	io.WriteString(w, "This is a bracket")
+	io.WriteString(w, bracket)
+}
+
+func eventHandler(w http.ResponseWriter, r *http.Request) {
 	event := r.URL.Query().Get("event")
 	if event == "" {
 		http.Error(w, "event required", 400)
 		return
 	}
-	fmt.Println("Returning bracket", event)
-	io.WriteString(w, "This is a bracket")
-	io.WriteString(w, event)
+
+	fmt.Println("Returning Event", event)
+
+	var ev Event
+
+	ev.Title = "King's Cup 42"
+	ev.Description = "One of the Tournaments of All Time"
+	ev.Brackets = make([]Bracket, 3)
+
+	io.WriteString(w, ev.Title)
+	io.WriteString(w, ev.Description)
+
+	for i, _ := range ev.Brackets {
+		fmt.Fprintf(w, `<div id="bracket-widget" hx-get="/bracket?bracket=%d" hx-trigger="load"></div>`, i)
+	}
+
 }
 
 type Event struct {
