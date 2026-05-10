@@ -46,6 +46,7 @@ type Event struct {
 type Bracket struct {
 	Id      uint64
 	EventId uint64
+	GameId  uint64
 
 	Title       string
 	Description string
