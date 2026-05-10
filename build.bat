@@ -21,4 +21,5 @@ if not exist out mkdir out
 xcopy static\ out\static\ /s /y /e
 del out\static\input.css
 
+go fmt
 go build -o out/redding-fgc-website.exe %flags% || exit /b 1

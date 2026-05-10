@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Redding FGC</title>
 	<link rel="stylesheet" href="styles.css">
+	<script src="htmx.min.js" integrity="sha384-H5SrcfygHmAuTDZphMHqBJLc3FhssKjG7w/CeCpFReSfwBWDTKpkzPP8c+cLsK+V"></script>
 </head>
 <body class="bg-zinc-950 text-zinc-200 font-sans">
 	<nav class="border-b border-zinc-800 bg-zinc-950/80 backdrop-blur flex items-center justify-between px-6 py-4 sticky top-0">
@@ -19,6 +20,9 @@
 		<h1 class="text-7xl text-sky-500 font-bold tracking-tighter">Redding FGC</h1>
 		<p class="mt-3 text-3xl text-zinc-400">Fighting Games. Community. Growth.</p>
 	</header>
+	<section id="braket" class="max-w-5xl mx-auto px-6 py-20 border-t border-zinc-800">
+		<div id="bracket-widget" hx-get="/bracket?event=kings-cup-42" hx-trigger="load"></div>
+	</section>
 	<section id="about" class="max-w-5xl mx-auto px-6 py-20 border-t border-zinc-800">
 		<h2 class="text-4xl text-semibold text-sky-500">About Us</h2>
 		<p class="mt-6 text-lg text-zinc-400">We are a community-based event organizing team dedicated to competitive fighting games and the people that love them.</p>

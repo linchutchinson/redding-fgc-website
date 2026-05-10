@@ -2,17 +2,89 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"net/http"
 	"os"
+	"time"
 )
 
 func main() {
 	static_fs := os.DirFS("static")
 	static_fs_handler := http.FileServer(http.FS(static_fs))
+
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		static_fs_handler.ServeHTTP(w, r)
 	})
+	http.HandleFunc("/bracket", bracketHandler)
 
 	fmt.Println("Hello RFGC")
 	http.ListenAndServe(":8080", nil)
+}
+
+func bracketHandler(w http.ResponseWriter, r *http.Request) {
+	event := r.URL.Query().Get("event")
+	if event == "" {
+		http.Error(w, "event required", 400)
+		return
+	}
+	fmt.Println("Returning bracket", event)
+	io.WriteString(w, "This is a bracket")
+	io.WriteString(w, event)
+}
+
+type Event struct {
+	Id          uint64
+	StartGGSlug string
+	Title       string
+	Description string
+	Date        time.Time
+	Link        string
+
+	Brackets []Bracket
+}
+
+type Bracket struct {
+	Id      uint64
+	EventId uint64
+
+	Title       string
+	Description string
+
+	Matches []Match
+}
+
+type Match struct {
+	Id        uint64
+	StartGGId uint64
+
+	Player1Id uint64
+	Player2Id uint64
+
+	// Pool number descends later into the tournament. So pool 0 is always the final pool that leads to top 8 and finals for the whole bracket.
+	Pool int32
+
+	// Round number is basically "Number of games away from the end of the pool", so round 0 is grand finals.
+	// Negative numbers indicate loser's side and positive numbers indicate winner's side.
+	Round int16
+
+	Player1Score uint8
+	Player2Score uint8
+}
+
+type Entrant struct {
+	Id        uint64
+	StartGGId uint64
+
+	Seed int64
+	Name string
+
+	PlayerIds []uint64
+}
+
+type Player struct {
+	Id        uint64
+	StartGGId uint64
+
+	GamerTag string
+	Prefix   string
 }

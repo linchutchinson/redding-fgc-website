@@ -3,11 +3,11 @@
 target:
 {
   executable: "out/redding-fgc-website.exe"
-  working_directory: "out/"
+  working_directory: out
   enabled: 1
 }
 debug_info:
 {
   path: "C:/Users/Lincoln/Documents/GitHub/redding-fgc-website/out/redding-fgc-website.exe"
-  timestamp: 66214077609506
+  timestamp: 66214337511541
 }
